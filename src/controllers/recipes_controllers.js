@@ -20,7 +20,6 @@ export const findRecipe = (req, res) => {
 }
 
 export const postRecipe = (req, res) => {
-    console.log(req)
     const {nombre, ingredientes, pasos} = req.body
     
     if (!nombre || !ingredientes || !pasos){
