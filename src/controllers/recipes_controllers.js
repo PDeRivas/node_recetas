@@ -36,3 +36,12 @@ export const postRecipe = (req, res) => {
     })
 }
 
+export const deleteRecipe = (req, res) => {
+    const id = req.params.id
+    db.query(`DELETE FROM recetas WHERE id=${id}`, (err, results) => {
+        if (err){
+            return res.status(500).json({error: 'Error en la consulta', tipo: err})
+        }
+        res.json(results)
+    })
+}
